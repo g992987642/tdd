@@ -5,10 +5,18 @@ import org.junit.jupiter.api.Test;
 
 public class MommifierTest {
     @Test
-    void test_number_of_vowels_are_more_than_30(){
+    void test_percentage_of_vowels_is_over_30(){
         Mommifier mommifier = new Mommifier();
         String vowelSpercentageOver30="keep";
         String changedStrings=mommifier.changedStringsAccordingVowels(vowelSpercentageOver30);
         Assertions.assertEquals("kemommyep",changedStrings);
     }
+    @Test
+    void test_percentage_of_vowels_is_no_more_than_30(){
+        Mommifier mommifier = new Mommifier();
+        String vowelSpercentageNoMoreThan30="key";
+        String changedStrings=mommifier.changedStringsAccordingVowels(vowelSpercentageNoMoreThan30);
+        Assertions.assertEquals("key",changedStrings);
+    }
+
 }
