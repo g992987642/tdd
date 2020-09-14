@@ -1,7 +1,10 @@
+import exception.NullStringsException;
+
 import java.util.*;
 
 public class Mommifier {
     public String changedStringsAccordingVowels(String s) {
+        validate(s);
         List<String> tempStringList = new ArrayList<>();
         Set<Character> vowelsSet = getVowelsSet();
         if (judgePercentageOfVowelsOver30(s)) {
@@ -41,5 +44,12 @@ public class Mommifier {
         set.add('u');
         return set;
     }
+
+    public void validate(String s) {
+        if (s == null) {
+            throw new NullStringsException();
+        }
+    }
+
 
 }
